@@ -1,0 +1,64 @@
+<div class="main-list">
+  <div class="container">
+    <h1>Users</h1>
+    <div class="add-user">
+      <button
+        type="button"
+        class="btn btn-sm btn-primary"
+        (click)="selectUser()"
+      >
+        + Add user
+      </button>
+    </div>
+    <div class="table-container">
+      <table class="table" *ngIf="users.length">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">SR.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>
+              {{ i + 1 }}
+            </td>
+            <td>
+              {{ user.firstName + " " + user.lastName }}
+            </td>
+            <td>
+              {{ user.email }}
+            </td>
+            <td>
+              {{ user.address }}
+            </td>
+            <td>
+              <div class="actions">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-success"
+                  (click)="selectUser(user)"
+                >
+                  <i class="fa fa-pen"></i> Edit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger"
+                  (click)="deleteUser(user.id)"
+                >
+                  <i class="fa fa-trash"></i> Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p class="text-center" *ngIf="!users.length">No users Found</p>
+      </div>
+    </div>
+  </div>
+</div>

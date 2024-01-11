@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@fortawesome/fontawesome-free/css/all.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-center{
+    text-align: center;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+
+
+.actions-btns{
+    display: flex;
+    justify-content: end;
+    button{
+        margin: 5px;
+    }
+}
+.table-container{
+    margin-top: 20px;
+    overflow: auto;
+}
+    tr{
+        td,th{
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+
+.actions{
+    display: flex;
+    width: max-content;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    button{
+        margin-left: 2px;
+        border-radius: 20px;
+    }
+}
+.add-user{
+    display: flex;
+    justify-content: end;
+}
